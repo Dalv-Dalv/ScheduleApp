@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.Pages.MainPages.ClassesPage"
+             xmlns:local="clr-namespace:CustomRenderers">
+
+    <ContentPage.Content>
+        <Frame BackgroundColor="{StaticResource AppBackgroundColor}" Padding="0" VerticalOptions="FillAndExpand">
+            <AbsoluteLayout>
+                <StackLayout x:Name="root_stackLayout" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Always"
+                            Margin="10,-16,10,-16" Padding="15, 0, 15, 0" Opacity="0">
+                        <StackLayout Padding="0, 15, 0, 15" x:Name="scrollViewContents">
+                            <Label Text="No classes." TextColor="{StaticResource PanelOutlineColor}" FontSize="15"
+                                HorizontalTextAlignment="Center"></Label>
+                            <!--<AbsoluteLayout HorizontalOptions="FillAndExpand" Padding="0" Background="red">
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20" Margin="10" Padding="0,0,1,1"
+                                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                </Frame>
+                            </Frame>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20" Margin="10" Padding="0,0,1,1"
+                                   AbsoluteLayout.LayoutBounds="0.5,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <Label Text="Romanian" TextColor="{StaticResource ButtonTextColor}" FontSize="20" HorizontalTextAlignment="Center">
+                                    </Label>
+                                </Frame>
+                            </Frame>
+                        </AbsoluteLayout>-->
+                            <!--<StackLayout>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20" Margin="10" Padding="0,0,1,1"
+                                   AbsoluteLayout.LayoutBounds="0.5,1,1,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <Label Text="Romanian" TextColor="{StaticResource ButtonTextColor}" FontSize="20" HorizontalTextAlignment="Center">
+                                    </Label>
+                                </Frame>
+                            </Frame>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20" Margin="30,-20,30,10" Padding="0,0,1,1"
+                                   AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                </Frame>
+                            </Frame>
+                        </StackLayout>-->
+                            <!--<Frame BackgroundColor="#8FA329" CornerRadius="20" Margin="10" Padding="0,0,1,1"
+                               VerticalOptions="Start">
+                            <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3" Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout HorizontalOptions="FillAndExpand" Margin="10">
+                                        <Label Text="Romanian" TextColor="{StaticResource ButtonTextColor}" FontSize="20" HorizontalTextAlignment="Start"></Label>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                            <Label Text="0 Reminders" HorizontalOptions="FillAndExpand" TextColor="#B2CC33" FontAttributes="Bold"></Label>
+                                            <Label Text="0 Notes" HorizontalOptions="StartAndExpand" TextColor="#B2CC33" FontAttributes="Bold"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Button Margin="-6" Padding="0" BackgroundColor="rgba(0,0,0,0.4)"
+                                            BorderWidth="3" BorderColor="#8FA329" 
+                                            Text=">" FontSize="30" TextColor="#8FA329">
+                                    </Button>
+                                </StackLayout>
+                            </Frame>
+                        </Frame>-->
+                            <!--BackgroundColor = Color.FromHex("#8FA329"),
+                            CornerRadius = 20,
+                            Margin = 10,
+                            Padding = new Thickness(0, 0, 1, 0),
+                            VerticalOptions = LayoutOptions.Start,
+                            Content = new Frame() {
+                                BackgroundColor = Color.FromHex("#3B4026"),
+                                CornerRadius = 17,
+                                Margin = 3,
+                                Content = new Label() {
+                                    Text = className,
+                                    TextColor = Color.{StaticResource ButtonTextColor},
+                                    FontSize = 20,
+                                    HorizontalTextAlignment = TextAlignment.Center
+                                }
+                            }-->
+                        </StackLayout>
+                    </ScrollView>
+                    <Frame BackgroundColor="{StaticResource PanelOutlineColor}" CornerRadius="20"
+                       Padding="0,0,1,1" Margin="10" VerticalOptions="End"
+                       HorizontalOptions="FillAndExpand">
+                        <!--hsl(35,0,30)-->
+                        <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                           CornerRadius="17"
+                           Margin="3" Padding="0">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 0" x:Name="editBar" IsVisible="False">
+                                    <Button Text="Add Homework" TextTransform="None" Clicked="Button_Clicked_AddHomework"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource PanelBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource PanelOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"></Button>
+                                    <Button Text="Edit" TextTransform="None" Clicked="Button_Clicked_Edit"
+                                        CornerRadius="100" HorizontalOptions="End" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"></Button>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="10">
+                                    <Button Text="Schedules" TextTransform="None" Clicked="Button_Clicked_SchedulesTab"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand"
+                                        BackgroundColor="{StaticResource PanelBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource PanelOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"></Button>
+                                    <Button Text="/\" BackgroundColor="{StaticResource PanelBackgroundColor}" TextColor="{StaticResource ButtonTextColor}" x:Name="expandButton"
+                                        WidthRequest="50" FontSize="21" CornerRadius="100" Clicked="Button_Clicked_PopPanel"
+                                        BorderColor="{StaticResource PanelOutlineColor}" BorderWidth="3"></Button>
+                                    <Button Text="Classes" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand"
+                                        BackgroundColor="{StaticResource PanelBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"></Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </StackLayout>
+                <Frame x:Name="addHomeworkPopupFrame" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                       BackgroundColor="#C000" IsVisible="False">
+                    <Frame VerticalOptions="Center" BackgroundColor="{StaticResource PanelOutlineColor}"
+                           CornerRadius="20" Margin="0" Padding="0,0,1,1">
+                        <Frame BackgroundColor="{StaticResource PanelBackgroundColor}" CornerRadius="18"
+                               Margin="3" Padding="10">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="-10,-10,-10,0">
+                                    <Button Text="X" TextTransform="None" Clicked="Button_Clicked_ReminderCreate_Back"
+                                            CornerRadius="100" HorizontalOptions="Start" Margin="10"
+                                            BackgroundColor="{StaticResource AppBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource PanelOutlineColor}"
+                                            TextColor="{StaticResource PanelOutlineColor}" FontAttributes="Bold" FontSize="20"
+                                            WidthRequest="45" HeightRequest="45"></Button>
+                                    <Entry Placeholder="Reminder Title" x:Name="reminderTitleEntry"
+                                           TextColor="{StaticResource ButtonTextColor}"
+                                           PlaceholderColor="#666666"
+                                           MaxLength="25"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"
+                                           Margin="0,0,20,0">
+                                    </Entry>
+                                </StackLayout>
+                                <Frame VerticalOptions="Center" BackgroundColor="{StaticResource PanelOutlineColor}" HorizontalOptions="FillAndExpand"
+                                       CornerRadius="20" Margin="0" Padding="0,0,1,0">
+                                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}" CornerRadius="18"
+                                               Margin="3" Padding="0">
+                                        <Picker HorizontalOptions="FillAndExpand" Margin="10,0" x:Name="homeworkClassPicker" 
+                                                    TextColor="{StaticResource ButtonTextColor}" HorizontalTextAlignment="Center" Title="Pick a class">
+                                        </Picker>
+                                    </Frame>
+                                </Frame>
+                                <Frame VerticalOptions="Center" BackgroundColor="{StaticResource PanelOutlineColor}"
+                                       CornerRadius="20" Margin="0" Padding="0,0,1,0">
+                                    <Frame BackgroundColor="{StaticResource AppBackgroundColor}" CornerRadius="18"
+                                           Margin="3" Padding="10">
+                                        <!--<Editor Placeholder="Reminder Description"
+                                                TextColor="{StaticResource ButtonTextColor}" IsSpellCheckEnabled="False"
+                                                PlaceholderColor="#666666"
+                                                MaxLength="300" AutoSize="TextChanges">
+
+                                        </Editor>-->
+                                        <ScrollView Padding="0" Margin="0">
+                                            <local:CustomEditor Placeholder="Reminder Description" x:Name="reminderDescriptionEditor"
+                                                TextColor="{StaticResource ButtonTextColor}" IsSpellCheckEnabled="False"
+                                                PlaceholderColor="#666666" 
+                                                MaxLength="300" AutoSize="TextChanges"></local:CustomEditor>
+                                        </ScrollView>
+                                    </Frame>
+                                </Frame>
+                                <Frame VerticalOptions="Center" BackgroundColor="{StaticResource UrgencyLevel2OutlineColor}" HorizontalOptions="FillAndExpand" x:Name="reminderColorPicker_borderFrame"
+                                       CornerRadius="20" Margin="0" Padding="0,0,1,0">
+                                    <Frame BackgroundColor="{StaticResource UrgencyLevel2BackgroundColor}" CornerRadius="18" x:Name="reminderColorPicker_backgroundFrame"
+                                               Margin="3" Padding="0">
+                                        <local:CustomPicker HorizontalOptions="FillAndExpand" Margin="10,0" x:Name="reminderColorPicker"
+                                                    TextColor="{StaticResource ButtonTextColor}" HorizontalTextAlignment="Center" Title="Pick a color">
+                                        </local:CustomPicker>
+                                    </Frame>
+                                </Frame>
+                                <Button Text="Create" TextTransform="None" Clicked="Button_Clicked_ReminderCreate_Done"
+                                        CornerRadius="17" HorizontalOptions="FillAndExpand" Margin="-10,10,-10,-10"
+                                        BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}" BorderWidth="3" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                        WidthRequest="80" HeightRequest="45"></Button>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                </Frame>
+            </AbsoluteLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.App">
+    <Application.Resources>
+        <Color x:Key="AppBackgroundColor">#1a1a1a</Color>
+
+        <Color x:Key="TitleScreenSubtitleColor">White</Color>
+        <Color x:Key="TitleScreenTitleColor">DarkOrange</Color>
+
+
+        <Color x:Key="ButtonTextColor">White</Color>
+
+        <Color x:Key="HighlightedButtonBackgroundColor">#7A541F</Color>
+        <Color x:Key="HighlightedButtonOutlineColor">#F2930D</Color>
+
+        <Color x:Key="RedButtonBackgroundColor">#7A1F1F</Color>
+        <Color x:Key="RedButtonOutlineColor">#FF0000</Color>
+
+
+        <Color x:Key="DayPickerMainColor">#7A541F</Color>
+        <Color x:Key="DayPickerSideColor">#492C04</Color>
+
+
+        <Color x:Key="PanelBackgroundColor">#333333</Color>
+        <Color x:Key="PanelOutlineColor">#4D4D4D</Color>
+
+
+        <!--WHEN MODIFYING URGENCY COLORS ALSO MODIFY IN UrgencyColors.cs-->
+        <Color x:Key="UrgencyLevel0BackgroundColor">#3B4026</Color>
+        <Color x:Key="UrgencyLevel0OutlineColor">#8FA329</Color>
+        <Color x:Key="UrgencyLevel0TextColor">#B2CC33</Color>
+
+        <Color x:Key="UrgencyLevel1BackgroundColor">#472C1F</Color>
+        <Color x:Key="UrgencyLevel1OutlineColor">#F2590D</Color>
+        <Color x:Key="UrgencyLevel1TextColor">#FF7733</Color>
+
+        <Color x:Key="UrgencyLevel2BackgroundColor">#402626</Color>
+        <Color x:Key="UrgencyLevel2OutlineColor">#D92626</Color>
+        <Color x:Key="UrgencyLevel2TextColor">#EB4747</Color>
+    </Application.Resources>
+    
+    <!--
+        <Application.Resources>
+        <Color x:Key="AppBackgroundColor">#1a1a1a</Color>
+
+        <Color x:Key="TitleScreenSubtitleColor">White</Color>
+        <Color x:Key="TitleScreenTitleColor">DarkOrange</Color>
+
+
+        <Color x:Key="ButtonTextColor">White</Color>
+
+        <Color x:Key="HighlightedButtonBackgroundColor">#7A541F</Color>
+        <Color x:Key="HighlightedButtonOutlineColor">#F2930D</Color>
+
+        <Color x:Key="RedButtonBackgroundColor">#7A1F1F</Color>
+        <Color x:Key="RedButtonOutlineColor">#FF0000</Color>
+
+
+        <Color x:Key="DayPickerMainColor">#7A541F</Color>
+        <Color x:Key="DayPickerSideColor">#492C04</Color>
+
+
+        <Color x:Key="PanelBackgroundColor">#333333</Color>
+        <Color x:Key="PanelOutlineColor">#4D4D4D</Color>
+
+
+        
+        <Color x:Key="UrgencyLevel0BackgroundColor">#3B4026</Color>
+        <Color x:Key="UrgencyLevel0OutlineColor">#8FA329</Color>
+        <Color x:Key="UrgencyLevel0TextColor">#B2CC33</Color>
+
+        <Color x:Key="UrgencyLevel1BackgroundColor">#472C1F</Color>
+        <Color x:Key="UrgencyLevel1OutlineColor">#F2590D</Color>
+        <Color x:Key="UrgencyLevel1TextColor">#FF7733</Color>
+
+        <Color x:Key="UrgencyLevel2BackgroundColor">#402626</Color>
+        <Color x:Key="UrgencyLevel2OutlineColor">#D92626</Color>
+        <Color x:Key="UrgencyLevel2TextColor">#EB4747</Color>
+    </Application.Resources>
+    -->
+</Application>

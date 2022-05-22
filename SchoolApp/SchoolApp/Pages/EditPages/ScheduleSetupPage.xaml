@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.Pages.ScheduleSetupPage"
+             xmlns:local="clr-namespace:CustomRenderers">
+    <ContentPage.Content>
+        <Frame BackgroundColor="{StaticResource AppBackgroundColor}" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="root_stackLayout">
+                <Frame VerticalOptions="Start" 
+                       BackgroundColor="{StaticResource PanelOutlineColor}"
+                       CornerRadius="20"
+                       Margin="10"
+                       Padding="0,0,1,1"
+                       Opacity="0">
+                    <!--hsl(0,0,30)-->
+                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                           CornerRadius="18"
+                           Margin="3">
+                        <!--hsl(0,0,20)-->
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Text="Default Schedule" HorizontalOptions="FillAndExpand"
+                                   TextColor="{StaticResource ButtonTextColor}" x:Name="nameEntry"></Entry>
+                            <Button Text="Done" TextTransform="None"
+                                    CornerRadius="100" HorizontalOptions="End" Padding="25, 0, 25, 0"
+                                    BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}" BorderWidth="2" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                    TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15" Clicked="Button_Clicked_Done"></Button>
+                            <!--hsl(35,60,30)-->
+                            <!--hsl(35,90,50)-->
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+                <StackLayout VerticalOptions="FillAndExpand" Opacity="0">
+                    <Frame BackgroundColor="{StaticResource HighlightedButtonOutlineColor}" CornerRadius="100" Margin="10" Padding="0,0,1,1">
+                        <Frame BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}" CornerRadius="100" Padding="0" Margin="3">
+                            <StackLayout Orientation="Horizontal">
+                                <Button TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15" Clicked="Button_Clicked_PrevDay">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,0">
+                                            <GradientStop Color="{StaticResource DayPickerSideColor}" Offset="0"></GradientStop>
+                                            <GradientStop Color="{StaticResource DayPickerMainColor}" Offset="0.8"></GradientStop>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                                <Label Text="Monday" VerticalTextAlignment="Center" 
+                                       TextColor="{StaticResource ButtonTextColor}" FontSize="20" FontAttributes="Bold"
+                                       HorizontalOptions="CenterAndExpand" x:Name="label_day"></Label>
+                                <Button TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15" Clicked="Button_Clicked_NextDay">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,0">
+                                            <GradientStop Color="{StaticResource DayPickerMainColor}" Offset="0.2"></GradientStop>
+                                            <GradientStop Color="{StaticResource DayPickerSideColor}" Offset="1"></GradientStop>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </StackLayout>
+                        </Frame>
+                    </Frame>
+                    <ScrollView VerticalOptions="FillAndExpand" x:Name="scrollView"
+                            Margin="10,-16,10,-35" Padding="15, 0, 15, 0" Opacity="1">
+                        <StackLayout Padding="0, 15, 0, 15" x:Name="scrollViewContents">
+                            <Label Text="No entries." TextColor="{StaticResource PanelOutlineColor}" FontSize="15"
+                                   HorizontalTextAlignment="Center"></Label>
+                            <!--
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20"
+                                   Margin="10" Padding="0,0,1,1"
+                                   VerticalOptions="Start">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <StackLayout>
+                                        <Label Text="Romanian" TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="2:00 PM - 3:00 PM" TextColor="#B2CC33" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Frame>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20"
+                                   Margin="10" Padding="0,0,1,1"
+                                   VerticalOptions="Start">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <StackLayout>
+                                        <Label Text="Math" TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="3:00 PM - 4:00 PM" TextColor="#B2CC33" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Frame>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20"
+                                   Margin="10" Padding="0,0,1,1"
+                                   VerticalOptions="Start">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <StackLayout>
+                                        <Label Text="Chemistry" TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="4:00 PM - 5:00 PM" TextColor="#B2CC33" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Frame>
+                            <Frame BackgroundColor="#8FA329" CornerRadius="20"
+                                   Margin="10" Padding="0,0,1,1"
+                                   VerticalOptions="Start">
+                                <Frame BackgroundColor="#3B4026" CornerRadius="17" Margin="3">
+                                    <StackLayout>
+                                        <Label Text="Biology" TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                        <Label Text="5:00 PM - 6:00 PM" TextColor="#B2CC33" FontAttributes="Bold"
+                                               FontSize="20" HorizontalTextAlignment="Center"></Label>
+                                    </StackLayout>
+                                </Frame>
+                            </Frame>
+                            -->
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+                <Frame BackgroundColor="{StaticResource PanelOutlineColor}"
+                       CornerRadius="20"
+                       Margin="10"
+                       Padding="0,0,1,2"
+                       Opacity="0">
+                    <!--hsl(35,0,30)-->
+                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                           CornerRadius="18"
+                           Margin="3">
+                        <!--hsl(0,0,20)-->
+                        <StackLayout>
+                            <Frame BackgroundColor="{StaticResource PanelOutlineColor}"
+                                       CornerRadius="100"
+                                       Padding="0,0,1,1" Margin="0,0,5,0"
+                                       HorizontalOptions="FillAndExpand">
+                                <!--hsl(35,0,30)-->
+                                <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                                       CornerRadius="100"
+                                       Margin="3" Padding="10,0,10,0">
+                                    <Picker TextColor="{StaticResource ButtonTextColor}" HorizontalTextAlignment="Center" Title="Select a Class"
+                                            HorizontalOptions="Center" x:Name="classPicker">
+                                    </Picker>
+                                </Frame>
+                            </Frame>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame BackgroundColor="{StaticResource PanelOutlineColor}"
+                                       CornerRadius="100"
+                                       Padding="0,0,1,1" Margin="0,0,5,0"
+                                       HorizontalOptions="FillAndExpand">
+                                    <!--hsl(35,0,30)-->
+                                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                                           CornerRadius="100"
+                                           Margin="3" Padding="10,0,10,0">
+                                        <TimePicker TextColor="{StaticResource ButtonTextColor}" HorizontalOptions="Center" 
+                                                    Format="HH:mm" x:Name="tp_start"></TimePicker>
+                                    </Frame>
+                                </Frame>
+
+                                <Frame BackgroundColor="{StaticResource PanelOutlineColor}"
+                                       CornerRadius="100"
+                                       Padding="0,0,1,1" Margin="5,0,0,0"
+                                       HorizontalOptions="FillAndExpand">
+                                    <!--hsl(35,0,30)-->
+                                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                                           CornerRadius="100"
+                                           Margin="3" Padding="10,0,10,0">
+                                        <TimePicker TextColor="{StaticResource ButtonTextColor}" HorizontalOptions="Center"
+                                                    Format="HH:mm" x:Name="tp_end"></TimePicker>
+                                    </Frame>
+                                </Frame>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Add" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}"
+                                        BorderWidth="2" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                        Margin="0,0,5,0" Clicked="Button_Clicked_Add"></Button>
+                                <!--hsl(35,60,30)  hsl(35,90,50)-->
+                                <Button Text="Clear" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="End" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource RedButtonBackgroundColor}"
+                                        BorderWidth="2" BorderColor="{StaticResource RedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                        Margin="5,0,0,0" Clicked="Button_Clicked_Clear"></Button>
+                                <!--hsl(0,60,30)  hsl(0,100,50)-->
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.Pages.ClassSetupPage">
+    <ContentPage.Content>
+        <Frame BackgroundColor="{StaticResource AppBackgroundColor}" Padding="0" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="root_stackLayout">
+                <Frame VerticalOptions="Start" 
+                       BackgroundColor="{StaticResource PanelOutlineColor}"
+                       CornerRadius="20"
+                       Margin="10"
+                       Padding="0,0,1,1"
+                       Opacity="0">
+                    <!--hsl(0,0,30)-->
+                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                           CornerRadius="18"
+                           Margin="3">
+                        <!--hsl(0,0,20)-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Set up your classes."
+                                   FontSize="15"
+                                   TextColor="{StaticResource ButtonTextColor}"
+                                   HorizontalOptions="StartAndExpand"
+                                   VerticalOptions="CenterAndExpand"></Label>
+                            <Button Text="Done" TextTransform="None"
+                                    CornerRadius="100" HorizontalOptions="EndAndExpand" Padding="25, 0, 25, 0"
+                                    BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}"
+                                    BorderWidth="2" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                    TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                    Clicked="Button_Clicked_Done"></Button>
+                            <!--hsl(35,60,30)-->
+                            <!--hsl(35,90,50)-->
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+                <ScrollView VerticalOptions="FillAndExpand"  x:Name="scrollView"
+                            Margin="10,-15.3,10,-35" Padding="15, 0, 15, 0"
+                            Opacity="0">
+                    <StackLayout Padding="0, 15, 0, 15" x:Name="scrollViewContents">
+                        <!--<Frame Background="#a32929"
+                               CornerRadius="20"
+                               Margin="10"
+                               Padding="0,0,1,0"
+                               VerticalOptions="Start">
+
+                            <Frame Background="#402626"
+                                   CornerRadius="17"
+                                   Margin="3">
+                                <StackLayout Orientation="Horizontal" Padding="-8">
+                                    <Label Text="Romanian"
+                                           TextColor="White"
+                                           FontSize="20"
+                                           HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="Center"
+                                           HorizontalTextAlignment="Center"></Label>
+                                    <Button Text="X" TextTransform="None" Clicked="Button_Clicked_Back" x:Name="classCloseButton"
+                                            CornerRadius="100" HorizontalOptions="End" Margin="0"
+                                            BackgroundColor="#1a1a1a" BorderWidth="3" BorderColor="#D92626"
+                                            TextColor="#EB4747" FontAttributes="Bold" FontSize="20"
+                                            WidthRequest="45" HeightRequest="45"></Button>
+                                </StackLayout>
+                            </Frame>
+                        </Frame>-->
+                        <!--<Frame Background="#8FA329"
+                               CornerRadius="20"
+                               Margin="10"
+                               Padding="0,0,1,0"
+                               VerticalOptions="Start">
+                            hsl(70,60,40)
+
+                            <Frame Background="#3B4026"
+                                   CornerRadius="17"
+                                   Margin="3">
+                                <Label Text="Math" 
+                                       TextColor="White"
+                                       FontSize="20"
+                                       HorizontalTextAlignment="Center"></Label>
+                            </Frame>
+                            hsl(70,25,20)
+                        </Frame>
+                        <Frame Background="#6629A3"
+                               CornerRadius="20"
+                               Margin="10"
+                               Padding="0,0,1,0"
+                               VerticalOptions="Start">
+                            hsl(270,60,40)
+
+                            <Frame Background="#332640"
+                                   CornerRadius="17"
+                                   Margin="3">
+                                <Label Text="Chemistry" 
+                                       TextColor="White"
+                                       FontSize="20"
+                                       HorizontalTextAlignment="Center"></Label>
+                            </Frame>
+                            hsl(270,25,20)
+                        </Frame>-->
+                    </StackLayout>
+                </ScrollView>
+                <Frame BackgroundColor="{StaticResource PanelOutlineColor}"
+                       CornerRadius="20"
+                       Margin="10"
+                       Padding="0,0,1,2"
+                       Opacity="0">
+                    <!--hsl(35,0,30)-->
+                    <Frame BackgroundColor="{StaticResource PanelBackgroundColor}"
+                           CornerRadius="18"
+                           Margin="3">
+                        <!--hsl(0,0,20)-->
+                        <StackLayout>
+                            <Entry Placeholder="Class Name"
+                                   TextColor="{StaticResource ButtonTextColor}"
+                                   PlaceholderColor="#666666"
+                                   x:Name="entry"
+                                   MaxLength="25">
+                                <!--hsl(0,0,40)-->
+                            </Entry>
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Add" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}"
+                                        BorderWidth="2" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                        Margin="0,0,5,0"
+                                        Clicked="Button_Clicked_Add"></Button>
+                                <!--hsl(35,60,30)  hsl(35,90,50)-->
+                                <!--<Button Text="Undo" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="FillAndExpand" Padding="25, 0, 25, 0"
+                                        BackgroundColor="#7A541F"
+                                        BorderWidth="2" BorderColor="#F2930D"
+                                        TextColor="White" FontAttributes="Bold" FontSize="15"
+                                        Margin="5,0,5,0"
+                                        Clicked="Button_Clicked_Undo"></Button>-->
+                                <!--hsl(35,60,30)  hsl(35,90,50)-->
+                                <Button Text="Clear" TextTransform="None"
+                                        CornerRadius="100" HorizontalOptions="End" Padding="25, 0, 25, 0"
+                                        BackgroundColor="{StaticResource RedButtonBackgroundColor}"
+                                        BorderWidth="2" BorderColor="{StaticResource RedButtonOutlineColor}"
+                                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                                        Margin="5,0,0,0"
+                                        Clicked="Button_Clicked_Clear"></Button>
+                                <!--hsl(0,60,30)  hsl(0,100,50)-->
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

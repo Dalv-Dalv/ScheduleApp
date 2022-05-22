@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.Pages.WelcomePage">
+    <ContentPage.Content>
+        <Frame BackgroundColor="{StaticResource AppBackgroundColor}" Padding="0">
+            <StackLayout HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Welcome to" TextColor="{StaticResource TitleScreenSubtitleColor}"
+                       HorizontalTextAlignment="Center"
+                       Margin="-12"
+                       Opacity="0"
+                       x:Name="label_subTitle"></Label>
+                <Label Text="Your Schedule App" TextColor="{StaticResource TitleScreenTitleColor}"
+                       HorizontalTextAlignment="Center"
+                       FontSize="30" FontAttributes="Bold"
+                       Margin="0, 0, 0, 50"
+                       Opacity="0"
+                       x:Name="label_title"></Label>
+
+                <Button Text="Set up classes" TextTransform="None"
+                        CornerRadius="100" HorizontalOptions="CenterAndExpand" Padding="25, 0, 25, 0"
+                        BackgroundColor="{StaticResource HighlightedButtonBackgroundColor}"
+                        BorderWidth="2" BorderColor="{StaticResource HighlightedButtonOutlineColor}"
+                        TextColor="{StaticResource ButtonTextColor}" FontAttributes="Bold" FontSize="15"
+                        Clicked="Button_Clicked"
+                        Opacity="0"
+                        x:Name="button">
+                    <!--hsl(35,60,30)  hsl(35,90,50)-->
+                </Button>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
