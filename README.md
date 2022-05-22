@@ -1,3 +1,5 @@
+![Icon](https://user-images.githubusercontent.com/81814019/169705406-52d45117-96d5-4f5a-a63a-b1225dcca591.png)
+
 # Prezentare Generală
 Aplicația „Schedule” este o aplicație pentru Android în care îți poți organiza materiile, supranumite „Clase”, în orare.
 
@@ -18,3 +20,5 @@ Aplicația este realizată folosind .NET Xamarin.Forms, cu limbajele de programa
 - Portarea aplicației pentru iOS
 - Orare comune mai multor persoane prin intermediul unui sistem cloud
 - Adăugarea unui sistem de grupare a Claselor
+
+# Screenshoturi
